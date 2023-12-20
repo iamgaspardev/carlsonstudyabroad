@@ -1,5 +1,18 @@
 
+<style>
+    .buttoncontactForm {
+        background-color: #ff0000; 
+        color: #ffffff;
+        width: 80px;
+        height: 40px;
+        transition: opacity 0.3s ease; 
+        font-weight: normal; /* Set font weight to normal to remove bold */
+    }
 
+    .buttoncontactForm:hover {
+        opacity: 0.8;
+    }
+</style>
 
      <section class="contact-section">
             <div class="container">
@@ -35,7 +48,7 @@
                                 </div>
                             </div>
                             <div class="form-group mt-3">
-                                <button type="submit" class="button button-contactForm boxed-btn">Send</button>
+                                <button type="submit" class="buttoncontactForm boxed-bt ">Send</button>
                             </div>
                         </form>
                     </div>

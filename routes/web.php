@@ -16,6 +16,7 @@ use App\Http\Livewire\Admin\Application;
 use App\Http\Controllers\EmailController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Apply;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

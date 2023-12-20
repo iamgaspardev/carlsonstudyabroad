@@ -30,7 +30,7 @@ class Apply extends Component
         $upload->email=$this->email;
         $upload->phone=$this->phone;
         $upload->location=$this->location;
-        $course-> course= $this->course;
+        $upload->course = $this->course;
         $filename=Carbon::now()->timestamp.'.' . $this->filename->extension();
         $this->filename->storeAs('files',$filename);
         $upload->filename=$filename;

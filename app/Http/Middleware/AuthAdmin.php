@@ -3,25 +3,32 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AuthAdmin
 {
-   /**
+    /**
      * Handle an incoming request.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle(Request $request, Closure $next)
+    public function handle($request, Closure $next)
     {
-        if(session('utype') === 'adm'){
-            return $next($request); 
-        }else{
-            session()->flush();
-            return redirect()-> route('login');
+        if(auth()->check()){
+            if (auth()->user()->utype =="adm"){
+                return $next($request);
+            }
+            else{
+                return redirect()->route('login');
+            }
         }
-        return $next($request);
+        // if (Auth::check() && session('utype') === 'adm') {
+        //     return $next($request);
+        // } else {
+        //     Auth::logout(); 
+        //     return redirect()->route('login');
+        // }
     }
 }
